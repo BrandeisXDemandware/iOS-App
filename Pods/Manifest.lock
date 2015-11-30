@@ -1,0 +1,16 @@
+PODS:
+  - EstimoteIndoorSDK (2.0.1):
+    - EstimoteSDK (~> 3.8)
+  - EstimoteSDK (3.8.1)
+  - GoogleMaps (1.10.5)
+
+DEPENDENCIES:
+  - EstimoteIndoorSDK
+  - GoogleMaps
+
+SPEC CHECKSUMS:
+  EstimoteIndoorSDK: 51c4086e920a6675483c9487b57dd22ed88c779f
+  EstimoteSDK: 34a31f7ad07bfeb58015f7decd01e1c20cbe8c45
+  GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
+
+COCOAPODS: 0.39.0
