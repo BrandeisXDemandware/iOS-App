@@ -7,7 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		74CBDB8E8DDFBA0F5959E4D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 328F10049CAAC0D710B6F316 /* libPods.a */; };
+		2B6C321D1C0CDFE200BCF39E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C321B1C0CDFE200BCF39E /* Bolts.framework */; };
+		2B6C321E1C0CDFE200BCF39E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C321C1C0CDFE200BCF39E /* Parse.framework */; };
+		2B6C32201C0CE02500BCF39E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C321F1C0CE02500BCF39E /* AudioToolbox.framework */; };
+		2B6C32221C0CE02E00BCF39E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C32211C0CE02E00BCF39E /* CFNetwork.framework */; };
+		2B6C32241C0CE03500BCF39E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C32231C0CE03500BCF39E /* CoreGraphics.framework */; };
+		2B6C32261C0CE03C00BCF39E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C32251C0CE03C00BCF39E /* CoreLocation.framework */; };
+		2B6C32281C0CE04300BCF39E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C32271C0CE04300BCF39E /* QuartzCore.framework */; };
+		2B6C322A1C0CE04900BCF39E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C32291C0CE04900BCF39E /* Security.framework */; };
+		2B6C322C1C0CE05000BCF39E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C322B1C0CE05000BCF39E /* StoreKit.framework */; };
+		2B6C322E1C0CE05700BCF39E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C322D1C0CE05700BCF39E /* SystemConfiguration.framework */; };
+		2B6C32331C0CE05F00BCF39E /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C322F1C0CE05F00BCF39E /* libz.1.1.3.tbd */; };
+		2B6C32341C0CE05F00BCF39E /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C32301C0CE05F00BCF39E /* libz.1.2.5.tbd */; };
+		2B6C32351C0CE05F00BCF39E /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C32311C0CE05F00BCF39E /* libz.1.tbd */; };
+		2B6C32361C0CE05F00BCF39E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C32321C0CE05F00BCF39E /* libz.tbd */; };
+		2B6C32391C0CE06900BCF39E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C32371C0CE06900BCF39E /* libsqlite3.0.tbd */; };
+		2B6C323A1C0CE06900BCF39E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C32381C0CE06900BCF39E /* libsqlite3.tbd */; };
+		2B6C323C1C0CE07200BCF39E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C323B1C0CE07200BCF39E /* Accounts.framework */; };
+		2B6C323E1C0CE07A00BCF39E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C323D1C0CE07A00BCF39E /* Social.framework */; };
 		B728553C1C0CD11900BE5812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728553B1C0CD11900BE5812 /* AppDelegate.swift */; };
 		B728553E1C0CD11900BE5812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728553D1C0CD11900BE5812 /* ViewController.swift */; };
 		B72855411C0CD11900BE5812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B728553F1C0CD11900BE5812 /* Main.storyboard */; };
@@ -15,6 +32,7 @@
 		B72855461C0CD11900BE5812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72855441C0CD11900BE5812 /* LaunchScreen.storyboard */; };
 		B72855511C0CD11900BE5812 /* MapDWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72855501C0CD11900BE5812 /* MapDWTests.swift */; };
 		B728555C1C0CD11900BE5812 /* MapDWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728555B1C0CD11900BE5812 /* MapDWUITests.swift */; };
+		C17B1C9321333E82661AF3A5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649C61FA4F863F82EA46B83B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +53,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		328F10049CAAC0D710B6F316 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B6C321B1C0CDFE200BCF39E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		2B6C321C1C0CDFE200BCF39E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		2B6C321F1C0CE02500BCF39E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2B6C32211C0CE02E00BCF39E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2B6C32231C0CE03500BCF39E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2B6C32251C0CE03C00BCF39E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2B6C32271C0CE04300BCF39E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2B6C32291C0CE04900BCF39E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2B6C322B1C0CE05000BCF39E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2B6C322D1C0CE05700BCF39E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2B6C322F1C0CE05F00BCF39E /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
+		2B6C32301C0CE05F00BCF39E /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		2B6C32311C0CE05F00BCF39E /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		2B6C32321C0CE05F00BCF39E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		2B6C32371C0CE06900BCF39E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		2B6C32381C0CE06900BCF39E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		2B6C323B1C0CE07200BCF39E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		2B6C323D1C0CE07A00BCF39E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		649C61FA4F863F82EA46B83B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D6DAD65B1C8092A0864F24 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AE2FC2379E7AB02F365B300F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B72855381C0CD11900BE5812 /* MapDW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDW.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +95,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74CBDB8E8DDFBA0F5959E4D3 /* libPods.a in Frameworks */,
+				2B6C323E1C0CE07A00BCF39E /* Social.framework in Frameworks */,
+				2B6C323C1C0CE07200BCF39E /* Accounts.framework in Frameworks */,
+				2B6C32391C0CE06900BCF39E /* libsqlite3.0.tbd in Frameworks */,
+				2B6C323A1C0CE06900BCF39E /* libsqlite3.tbd in Frameworks */,
+				2B6C32331C0CE05F00BCF39E /* libz.1.1.3.tbd in Frameworks */,
+				2B6C32341C0CE05F00BCF39E /* libz.1.2.5.tbd in Frameworks */,
+				2B6C32351C0CE05F00BCF39E /* libz.1.tbd in Frameworks */,
+				2B6C32361C0CE05F00BCF39E /* libz.tbd in Frameworks */,
+				2B6C322E1C0CE05700BCF39E /* SystemConfiguration.framework in Frameworks */,
+				2B6C322C1C0CE05000BCF39E /* StoreKit.framework in Frameworks */,
+				2B6C322A1C0CE04900BCF39E /* Security.framework in Frameworks */,
+				2B6C32281C0CE04300BCF39E /* QuartzCore.framework in Frameworks */,
+				2B6C32261C0CE03C00BCF39E /* CoreLocation.framework in Frameworks */,
+				2B6C32241C0CE03500BCF39E /* CoreGraphics.framework in Frameworks */,
+				2B6C32221C0CE02E00BCF39E /* CFNetwork.framework in Frameworks */,
+				2B6C32201C0CE02500BCF39E /* AudioToolbox.framework in Frameworks */,
+				C17B1C9321333E82661AF3A5 /* Pods.framework in Frameworks */,
+				2B6C321E1C0CDFE200BCF39E /* Parse.framework in Frameworks */,
+				2B6C321D1C0CDFE200BCF39E /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +137,23 @@
 		101BB9F3E51BB4C07F48F88A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				328F10049CAAC0D710B6F316 /* libPods.a */,
+				2B6C323D1C0CE07A00BCF39E /* Social.framework */,
+				2B6C323B1C0CE07200BCF39E /* Accounts.framework */,
+				2B6C32371C0CE06900BCF39E /* libsqlite3.0.tbd */,
+				2B6C32381C0CE06900BCF39E /* libsqlite3.tbd */,
+				2B6C322F1C0CE05F00BCF39E /* libz.1.1.3.tbd */,
+				2B6C32301C0CE05F00BCF39E /* libz.1.2.5.tbd */,
+				2B6C32311C0CE05F00BCF39E /* libz.1.tbd */,
+				2B6C32321C0CE05F00BCF39E /* libz.tbd */,
+				2B6C322D1C0CE05700BCF39E /* SystemConfiguration.framework */,
+				2B6C322B1C0CE05000BCF39E /* StoreKit.framework */,
+				2B6C32291C0CE04900BCF39E /* Security.framework */,
+				2B6C32271C0CE04300BCF39E /* QuartzCore.framework */,
+				2B6C32251C0CE03C00BCF39E /* CoreLocation.framework */,
+				2B6C32231C0CE03500BCF39E /* CoreGraphics.framework */,
+				2B6C32211C0CE02E00BCF39E /* CFNetwork.framework */,
+				2B6C321F1C0CE02500BCF39E /* AudioToolbox.framework */,
+				649C61FA4F863F82EA46B83B /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,6 +177,8 @@
 				B72855391C0CD11900BE5812 /* Products */,
 				6CC3E1D48DED28BADD5D6B18 /* Pods */,
 				101BB9F3E51BB4C07F48F88A /* Frameworks */,
+				2B6C321B1C0CDFE200BCF39E /* Bolts.framework */,
+				2B6C321C1C0CDFE200BCF39E /* Parse.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -478,6 +550,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MapDW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -495,6 +571,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MapDW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

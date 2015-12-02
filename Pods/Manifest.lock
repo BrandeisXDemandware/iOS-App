@@ -1,16 +1,28 @@
 PODS:
+  - Bolts (1.5.0):
+    - Bolts/AppLinks (= 1.5.0)
+    - Bolts/Tasks (= 1.5.0)
+  - Bolts/AppLinks (1.5.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.5.0)
   - EstimoteIndoorSDK (2.0.1):
     - EstimoteSDK (~> 3.8)
   - EstimoteSDK (3.8.1)
   - GoogleMaps (1.10.5)
+  - Parse (1.10.0):
+    - Bolts/Tasks (~> 1.5)
 
 DEPENDENCIES:
+  - Bolts
   - EstimoteIndoorSDK
   - GoogleMaps
+  - Parse
 
 SPEC CHECKSUMS:
+  Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   EstimoteIndoorSDK: 51c4086e920a6675483c9487b57dd22ed88c779f
   EstimoteSDK: 34a31f7ad07bfeb58015f7decd01e1c20cbe8c45
   GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
+  Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
 
 COCOAPODS: 0.39.0

@@ -8,43 +8,65 @@
 
 import UIKit
 import GoogleMaps
+import Parse
+
 
 class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
 
     let locationManager = EILIndoorLocationManager()
     var location: EILLocation!
     
-    var mySelfLat: Double = 0
-    var mySelfLong: Double = 0
-    var marker: GMSMarker = GMSMarker()
+    let uuid = NSUUID().UUIDString
+    
+    let fixLat: Double = 42.4817457
+    let fixLong: Double = -71.2149056
+    
+    var lats = [Double] (count: 3, repeatedValue: 0)
+    var longs = [Double] (count: 3, repeatedValue: 0)
+    
+    var markers = [GMSMarker](count: 3, repeatedValue: GMSMarker())
+    
+    let updateFreq: Double = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        let camera = GMSCameraPosition.cameraWithLatitude(42.4817457,
-            longitude: -71.2149056, zoom: 19.5)
+        
+        // PARSE TEST
+        //        let testObject = PFObject(className: "TestObject")
+        //        testObject["foo"] = "bar"
+        //        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+        //            print("Object has been saved.")
+        //        }
+        
+        
+        // GOOGLE MAP
+        // draw the map
+        let camera = GMSCameraPosition.cameraWithLatitude(fixLat,
+            longitude: fixLong, zoom: 19.5)
         let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
         mapView.myLocationEnabled = true
         mapView.animateToBearing(63)
         self.view = mapView
         
-        
-        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "reloadMarker", userInfo: nil, repeats: true)
-        
-        marker = GMSMarker()
-        marker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
-        mySelfLat = 42.4817457
-        mySelfLong = -71.2149056
-        marker.position = CLLocationCoordinate2DMake(mySelfLat, mySelfLong)
-        marker.map = mapView
+        // draw the personal markers
+        lats[0]=fixLat
+        longs[0]=fixLong
+        markers[0].icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+        markers[0].position = CLLocationCoordinate2DMake(lats[0], longs[0])
+        markers[0].map = mapView
         
         
+        // MARKER UPDATE TIMER
+        NSTimer.scheduledTimerWithTimeInterval(updateFreq, target: self, selector: "reloadMarker", userInfo: nil, repeats: true)
+        
+        
+        // BEACON LOCATION INDDOR SDK
         self.locationManager.delegate = self
         
         ESTConfig.setupAppID("dwmap-csh", andAppToken: "2ef072d2ceceab171502e46684a50ffc")
         
-        let fetchLocationRequest = EILRequestFetchLocation(locationIdentifier: "my-kitchen")
+        let fetchLocationRequest = EILRequestFetchLocation(locationIdentifier: "sacks")
         fetchLocationRequest.sendRequestWithCompletion { (location, error) in
             if location != nil {
                 self.location = location!
@@ -56,11 +78,22 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
         
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // RELOAD MARKER
+    func reloadMarker() {
+        lats[0] += 0.000005
+        longs[0] += 0.000005
+        markers[0].position = CLLocationCoordinate2DMake(lats[0], longs[0])
+    }
+
+    
+    // INDOOR SDK
     func indoorLocationManager(manager: EILIndoorLocationManager!,
         didFailToUpdatePositionWithError error: NSError!) {
             print("failed to update position: \(error)")
@@ -80,13 +113,6 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
             }
             print(String(format: "x: %5.2f, y: %5.2f, orientation: %3.0f, accuracy: %@",
                 position.x, position.y, position.orientation, accuracy))
-    }
-
-    func reloadMarker() {
-        //        marker.map = nil;
-        mySelfLat = mySelfLat + 0.00001
-        mySelfLong = mySelfLong + 0.00001
-        marker.position = CLLocationCoordinate2DMake(mySelfLat, mySelfLong)
     }
 
 }

@@ -15,6 +15,8 @@
 #import "EILIndoorLocationView.h"
 #import "EILRequestFetchLocation.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import <Parse/Parse.h>
+#import <Bolts/BFTask.h>
 
 
 #ifndef ObjCBridge_h

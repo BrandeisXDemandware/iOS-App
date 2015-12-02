@@ -8,18 +8,37 @@
 
 import UIKit
 import GoogleMaps
+import Parse
+import Bolts
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    // Google API Key
     let googleMapsApiKey = "AIzaSyAdiZm7s5cBskTUq8vbhyIvFO5AaWL54IM"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
         
+        // PARSE
+        // [Optional] Power your app with Local Datastore. For more info, go to
+        // https://parse.com/docs/ios_guide#localdatastore/iOS
+        Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        Parse.setApplicationId("JFXj6skkhZEDFuNnGYLm7pajgPRIy11QElUi6wv8",
+            clientKey: "vKDMPDXXE0Le7ff5BDvPfXIz0qQkIYZWbbN0TAKE")
+        
+        // [Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        
+        // GOOGLE MAP
         GMSServices.provideAPIKey(googleMapsApiKey)
+        
         
         return true
     }
