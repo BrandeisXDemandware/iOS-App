@@ -35,13 +35,33 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
         super.viewDidLoad()
         
         
-        // PARSE TEST
-        //        let testObject = PFObject(className: "TestObject")
-        //        testObject["foo"] = "bar"
-        //        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-        //            print("Object has been saved.")
-        //        }
-        
+        let query = PFQuery(className:"TestObject")
+        query.whereKey("uuid", equalTo:uuid)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                if(objects!.count == 0){
+                    let newObject = PFObject(className:"TestObject")
+                    newObject["uuid"] = self.uuid
+                    newObject["xP"] = self.xP
+                    newObject["yP"] = self.yP
+                    newObject.saveInBackgroundWithBlock {
+                        (success: Bool, error: NSError?) -> Void in
+                        if (success) {
+                            // The object has been saved.
+                        } else {
+                            // There was a problem, check error.description
+                        }
+                    }
+                }else{
+                    self.updateXY()
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
         
         // GOOGLE MAP
         // draw the map
@@ -90,9 +110,43 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
     
     // RELOAD MARKER
     func reloadMarker() {
+        updateXY()
+        let lower : UInt32 = 0
+        let upper : UInt32 = 4
+        self.xP = Double(arc4random_uniform(upper - lower) + lower)
+        self.yP = Double(arc4random_uniform(upper - lower) + lower)
         lats[0] = fixLat + (yP-1)/8500
         longs[0] = fixLong + (xP-1)/8000
         markers[0].position = CLLocationCoordinate2DMake(lats[0], longs[0])
+    }
+    
+    func updateXY(){
+        let query = PFQuery(className:"TestObject")
+        query.whereKey("uuid", equalTo:self.uuid)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        object["xP"] = self.xP
+                        object["yP"] = self.yP
+                        object.saveInBackgroundWithBlock {
+                            (success: Bool, error: NSError?) -> Void in
+                            if (success) {
+                                // The object has been saved.
+                            } else {
+                                // There was a problem, check error.description
+                            }
+                        }
+                    }
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
     }
 
     
