@@ -25,10 +25,10 @@
 		2B6C323A1C0CE06900BCF39E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C32381C0CE06900BCF39E /* libsqlite3.tbd */; };
 		2B6C323C1C0CE07200BCF39E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C323B1C0CE07200BCF39E /* Accounts.framework */; };
 		2B6C323E1C0CE07A00BCF39E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6C323D1C0CE07A00BCF39E /* Social.framework */; };
+		2BDADAB91C0FD5DB00F8F553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BDADAB81C0FD5DB00F8F553 /* Assets.xcassets */; };
 		B728553C1C0CD11900BE5812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728553B1C0CD11900BE5812 /* AppDelegate.swift */; };
 		B728553E1C0CD11900BE5812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728553D1C0CD11900BE5812 /* ViewController.swift */; };
 		B72855411C0CD11900BE5812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B728553F1C0CD11900BE5812 /* Main.storyboard */; };
-		B72855431C0CD11900BE5812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72855421C0CD11900BE5812 /* Assets.xcassets */; };
 		B72855461C0CD11900BE5812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72855441C0CD11900BE5812 /* LaunchScreen.storyboard */; };
 		B72855511C0CD11900BE5812 /* MapDWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72855501C0CD11900BE5812 /* MapDWTests.swift */; };
 		B728555C1C0CD11900BE5812 /* MapDWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728555B1C0CD11900BE5812 /* MapDWUITests.swift */; };
@@ -71,6 +71,7 @@
 		2B6C32381C0CE06900BCF39E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		2B6C323B1C0CE07200BCF39E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		2B6C323D1C0CE07A00BCF39E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		2BDADAB81C0FD5DB00F8F553 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		649C61FA4F863F82EA46B83B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D6DAD65B1C8092A0864F24 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AE2FC2379E7AB02F365B300F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		B728553B1C0CD11900BE5812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B728553D1C0CD11900BE5812 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B72855401C0CD11900BE5812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B72855421C0CD11900BE5812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B72855451C0CD11900BE5812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B72855471C0CD11900BE5812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B728554C1C0CD11900BE5812 /* MapDWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapDWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,9 +198,9 @@
 				B728553B1C0CD11900BE5812 /* AppDelegate.swift */,
 				B728553D1C0CD11900BE5812 /* ViewController.swift */,
 				B728553F1C0CD11900BE5812 /* Main.storyboard */,
-				B72855421C0CD11900BE5812 /* Assets.xcassets */,
 				B72855441C0CD11900BE5812 /* LaunchScreen.storyboard */,
 				B72855471C0CD11900BE5812 /* Info.plist */,
+				2BDADAB81C0FD5DB00F8F553 /* Assets.xcassets */,
 			);
 			path = MapDW;
 			sourceTree = "<group>";
@@ -294,7 +294,7 @@
 				TargetAttributes = {
 					B72855371C0CD11900BE5812 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 789DL5SZQ4;
+						DevelopmentTeam = X3HTHP957S;
 					};
 					B728554B1C0CD11900BE5812 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -332,7 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B72855461C0CD11900BE5812 /* LaunchScreen.storyboard in Resources */,
-				B72855431C0CD11900BE5812 /* Assets.xcassets in Resources */,
+				2BDADAB91C0FD5DB00F8F553 /* Assets.xcassets in Resources */,
 				B72855411C0CD11900BE5812 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,7 +557,7 @@
 				INFOPLIST_FILE = MapDW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JingZou.MapDW;
+				PRODUCT_BUNDLE_IDENTIFIER = demandware.brandeis.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = MapDW/ObjCBridge.h;
@@ -578,7 +578,7 @@
 				INFOPLIST_FILE = MapDW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JingZou.MapDW;
+				PRODUCT_BUNDLE_IDENTIFIER = demandware.brandeis.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = MapDW/ObjCBridge.h;

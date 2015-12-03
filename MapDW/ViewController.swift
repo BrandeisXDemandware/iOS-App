@@ -26,7 +26,10 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
     
     var markers = [GMSMarker](count: 3, repeatedValue: GMSMarker())
     
-    let updateFreq: Double = 0.5
+    let updateFreq: Double = 0.1
+    
+    var xP=0.0
+    var yP=0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +53,8 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
         self.view = mapView
         
         // draw the personal markers
-        lats[0]=fixLat
-        longs[0]=fixLong
+        lats[0] = fixLat + xP/1000
+        longs[0] = fixLong + yP/1000
         markers[0].icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
         markers[0].position = CLLocationCoordinate2DMake(lats[0], longs[0])
         markers[0].map = mapView
@@ -87,8 +90,8 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
     
     // RELOAD MARKER
     func reloadMarker() {
-        lats[0] += 0.000005
-        longs[0] += 0.000005
+        lats[0] = fixLat + (yP-1)/8500
+        longs[0] = fixLong + (xP-1)/8000
         markers[0].position = CLLocationCoordinate2DMake(lats[0], longs[0])
     }
 
@@ -103,6 +106,10 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
         didUpdatePosition position: EILOrientedPoint!,
         withAccuracy positionAccuracy: EILPositionAccuracy,
         inLocation location: EILLocation!) {
+            
+            xP = position.x
+            yP = position.y
+            
             var accuracy: String!
             switch positionAccuracy {
             case .VeryHigh: accuracy = "+/- 1.00m"
