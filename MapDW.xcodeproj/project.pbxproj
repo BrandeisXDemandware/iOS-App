@@ -294,7 +294,7 @@
 				TargetAttributes = {
 					B72855371C0CD11900BE5812 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = X3HTHP957S;
+						DevelopmentTeam = 789DL5SZQ4;
 					};
 					B728554B1C0CD11900BE5812 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -557,10 +557,11 @@
 				INFOPLIST_FILE = MapDW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = demandware.brandeis.com;
+				PRODUCT_BUNDLE_IDENTIFIER = demandware2.brandeis.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = MapDW/ObjCBridge.h;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -578,10 +579,11 @@
 				INFOPLIST_FILE = MapDW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = demandware.brandeis.com;
+				PRODUCT_BUNDLE_IDENTIFIER = demandware2.brandeis.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = MapDW/ObjCBridge.h;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

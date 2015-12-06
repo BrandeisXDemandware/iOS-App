@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import Parse
+import Darwin
 
 
 class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
@@ -30,6 +31,7 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
     
     var xP=0.0
     var yP=0.0
+    var orientationP=63.0
     
     var mapView:GMSMapView!
     
@@ -70,7 +72,7 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
             longitude: fixLong, zoom: 19.5)
         mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
         mapView.myLocationEnabled = true
-        mapView.animateToBearing(63)
+        mapView.animateToBearing(self.orientationP)
         self.view = mapView
         
         // draw the personal markers
@@ -83,7 +85,6 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
         markers[0].snippet = "Shopper"
         markers[0].map = mapView
         
-        
         // MARKER UPDATE TIMER
         NSTimer.scheduledTimerWithTimeInterval(updateFreq, target: self, selector: "reloadMarker", userInfo: nil, repeats: true)
         
@@ -93,7 +94,7 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
         
         ESTConfig.setupAppID("dwmap-csh", andAppToken: "2ef072d2ceceab171502e46684a50ffc")
         
-        let fetchLocationRequest = EILRequestFetchLocation(locationIdentifier: "sacks")
+        let fetchLocationRequest = EILRequestFetchLocation(locationIdentifier: "home-b2k")
         fetchLocationRequest.sendRequestWithCompletion { (location, error) in
             if location != nil {
                 self.location = location!
@@ -115,12 +116,15 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
     // RELOAD MARKER
     func reloadMarker() {
         updateXY()
-        let lower : UInt32 = 0
-        let upper : UInt32 = 4
-        self.xP = Double(arc4random_uniform(upper - lower) + lower)
-        self.yP = Double(arc4random_uniform(upper - lower) + lower)
-        lats[0] = fixLat + (yP-1)/8500
-        longs[0] = fixLong + (xP-1)/8000
+        
+        let fixX: Double = 60.4361635556 //longToX(-71.2149056)
+        let fixY: Double = 23.8818922508 //latToY(42.4817457)
+        
+        let newlong: Double = xToLong(fixX - self.xP/100000)
+        let newlat: Double = yToLat(fixY - self.yP/100000)
+
+        lats[0] = newlat
+        longs[0] = newlong
         markers[0].position = CLLocationCoordinate2DMake(lats[0], longs[0])
         reloadOtherMarker()
     }
@@ -203,8 +207,11 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
         withAccuracy positionAccuracy: EILPositionAccuracy,
         inLocation location: EILLocation!) {
             
-            xP = position.x
-            yP = position.y
+            self.xP = position.x
+            self.yP = position.y
+            
+            self.orientationP = position.orientation
+            mapView.animateToBearing(self.orientationP)
             
             var accuracy: String!
             switch positionAccuracy {
@@ -217,6 +224,50 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
             print(String(format: "x: %5.2f, y: %5.2f, orientation: %3.0f, accuracy: %@",
                 position.x, position.y, position.orientation, accuracy))
     }
+    
+    //Covert longitude/latitude to x/y on mercator projection
+    func longToX(long: Double) -> Double {
+        let mapWidth: Double = 200
+
+        let x: Double = (long + 180) * (mapWidth / 360)
+
+        return x
+    }
+    
+    func xToLong(x: Double) -> Double {
+        let mapWidth: Double = 200
+        
+        let long: Double = x / (mapWidth / 360) - 180
+        
+        return long
+    }
+    
+    func latToY(lat: Double) -> Double {
+        let mapWidth: Double = 200
+        let mapHeight: Double = 100
+
+        let latRad: Double = lat * M_PI / 180
+        
+        let mercN: Double = log(tan((M_PI/4)+(latRad/2)));
+
+        let y: Double = (mapHeight/2)-(mapWidth*mercN/(2*M_PI))
+        
+        return y
+    }
+    
+    func yToLat(y: Double) -> Double {
+        let mapWidth: Double = 200
+        let mapHeight: Double = 100
+        
+        let mercN: Double = ((mapHeight/2) - y) * (2*M_PI) / mapWidth
+        
+        let latRad: Double = (atan(exp(mercN)) - (M_PI/4)) * 2
+        
+        let lat: Double = latRad * 180 / M_PI
+        
+        return lat
+    }
+
 
 }
 
