@@ -32,6 +32,8 @@
 		B72855461C0CD11900BE5812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72855441C0CD11900BE5812 /* LaunchScreen.storyboard */; };
 		B72855511C0CD11900BE5812 /* MapDWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72855501C0CD11900BE5812 /* MapDWTests.swift */; };
 		B728555C1C0CD11900BE5812 /* MapDWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728555B1C0CD11900BE5812 /* MapDWUITests.swift */; };
+		B74A697C1C179A87008B914C /* associate.png in Resources */ = {isa = PBXBuildFile; fileRef = B74A697B1C179A87008B914C /* associate.png */; };
+		B74A69801C179B25008B914C /* customer.png in Resources */ = {isa = PBXBuildFile; fileRef = B74A697F1C179B25008B914C /* customer.png */; };
 		C17B1C9321333E82661AF3A5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649C61FA4F863F82EA46B83B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		B728555B1C0CD11900BE5812 /* MapDWUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDWUITests.swift; sourceTree = "<group>"; };
 		B728555D1C0CD11900BE5812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B728556A1C0CD39200BE5812 /* ObjCBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCBridge.h; path = MapDW/ObjCBridge.h; sourceTree = "<group>"; };
+		B74A697B1C179A87008B914C /* associate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = associate.png; sourceTree = "<group>"; };
+		B74A697F1C179B25008B914C /* customer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = customer.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,8 @@
 				B728553D1C0CD11900BE5812 /* ViewController.swift */,
 				B728553F1C0CD11900BE5812 /* Main.storyboard */,
 				B72855441C0CD11900BE5812 /* LaunchScreen.storyboard */,
+				B74A697B1C179A87008B914C /* associate.png */,
+				B74A697F1C179B25008B914C /* customer.png */,
 				B72855471C0CD11900BE5812 /* Info.plist */,
 				2BDADAB81C0FD5DB00F8F553 /* Assets.xcassets */,
 			);
@@ -331,6 +337,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74A697C1C179A87008B914C /* associate.png in Resources */,
+				B74A69801C179B25008B914C /* customer.png in Resources */,
 				B72855461C0CD11900BE5812 /* LaunchScreen.storyboard in Resources */,
 				2BDADAB91C0FD5DB00F8F553 /* Assets.xcassets in Resources */,
 				B72855411C0CD11900BE5812 /* Main.storyboard in Resources */,

@@ -79,7 +79,10 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
         markers.append(GMSMarker())
         markers.append(GMSMarker())
         markers.append(GMSMarker())
-        markers[0].icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+        //markers[0].icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+        markers[0].icon = UIImage(named: "customer")
+        markers[0].infoWindowAnchor = CGPointMake(0.44, 0.45)
+
         markers[0].position = CLLocationCoordinate2DMake(lats[0], longs[0])
         markers[0].title = "Me"
         markers[0].snippet = "Shopper"
@@ -94,7 +97,7 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
         
         ESTConfig.setupAppID("dwmap-csh", andAppToken: "2ef072d2ceceab171502e46684a50ffc")
         
-        let fetchLocationRequest = EILRequestFetchLocation(locationIdentifier: "home-b2k")
+        let fetchLocationRequest = EILRequestFetchLocation(locationIdentifier: "volen")
         fetchLocationRequest.sendRequestWithCompletion { (location, error) in
             if location != nil {
                 self.location = location!
@@ -145,6 +148,7 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
                         self.lats[count] = self.fixLat + (nYP-1)/8500
                         self.longs[count] = self.fixLong + (nXP-1)/8000
                         self.markers[count].position = CLLocationCoordinate2DMake(self.lats[count], self.longs[count])
+                        self.markers[count].icon = UIImage(named: "associate")
                         self.markers[count].title = object.objectId
                         self.markers[count].snippet = "Assistant"
                         self.markers[count].map=self.mapView
@@ -210,8 +214,8 @@ class ViewController: UIViewController, EILIndoorLocationManagerDelegate {
             self.xP = position.x
             self.yP = position.y
             
-            self.orientationP = position.orientation
-            mapView.animateToBearing(self.orientationP)
+            //self.orientationP = position.orientation
+            //mapView.animateToBearing(self.orientationP)
             
             var accuracy: String!
             switch positionAccuracy {
