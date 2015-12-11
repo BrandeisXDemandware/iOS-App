@@ -65,4 +65,5 @@ fetchLocationRequest.sendRequestWithCompletion { (location, error) in
 ```
 Once we have the x, y coordinate, we will have a relative location in a space relative to all the beacons and if we have define longtitude and latitude for each beacons, we will have our actual longtitude and latitude on Earth. With such information, we can easitly draw markers on Google Map.
 
+####Screenshoot
 <img src="http://i.imgur.com/MIxwWgz.jpg" align="left" height="600" Hspace="30" Vspace="10">
