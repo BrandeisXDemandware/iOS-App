@@ -2,7 +2,7 @@
 Proof of Concept: Beacon Location on Google Map in iOS-App with Demandware @ Brandeis University
 
 ####SDK
-Please check the Podfile for the SDK we installed. Noted, the Parse/Bolt library spec is not updated on CocoaPods so you might need to manually installed them.
+Please check the Podfile for the SDK we installed. Noted, we use Parse as our backend but the Parse/Bolt library spec is not updated on CocoaPods so you might need to manually installed them.
 
 ####Critical Code
 Link Parse API and Google Map API in `func didFinishLaunchingWithOptions()`at `AppDelegate.swift`:
@@ -63,7 +63,7 @@ fetchLocationRequest.sendRequestWithCompletion { (location, error) in
     }
 }
 ```
-Once we have the x, y coordinate, we will have a relative location in a space relative to all the beacons and if we have define longtitude and latitude for each beacons, we will have our actual longtitude and latitude on Earth. With such information, we can easitly draw markers on Google Map.
+Once we have the x, y coordinate, we will have a relative location in a space relative to all the beacons and if we have define longtitude and latitude for each beacons, we will have our actual longtitude and latitude on Earth. With such information, we can easitly draw markers on Google Map. Since markers are just object in Swift, we can store an array of marker object and modify them according to our database.
 
 ####Screenshoot
 <img src="http://i.imgur.com/MIxwWgz.jpg" align="left" height="600" Hspace="30" Vspace="10">
